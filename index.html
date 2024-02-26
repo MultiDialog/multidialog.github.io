@@ -49,14 +49,23 @@
             <div class="columns is-centered">
                 <div class="column has-text-centered">
                     <h1 class="title is-1 publication-title"
-                        style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;"><img
-                            src="./static/images/logo.png" width="60" height="60" style="margin-right: 10px;">MultiDialog:</h1>
+                        style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;">MultiDialog:</h1>
                     <h1 class="title is-2 publication-title">Spoken Dialogue Model for Face-to-Face Conversation</h1>
                     <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://sites.google.com/view/sejinpark/sejinpark">Sejin Park</a>,</span>
                         <span class="author-block">
               <a href="https://chae-won-kim.github.io/">Chae Won Kim</a>,</span>
+                        <span class="author-block">
+              <a>Hyeongseop Rha</a>,</span>
+                        <span class="author-block">
+              <a href="https://sites.google.com/view/ms-dot-k">Minsu Kim</a>,</span>
+                        <span class="author-block">
+              <a href="https://joannahong.github.io/">Joanna Hong</a>,</span>
+                        <span class="author-block">
+              <a>Jeonghun Yeo</a>,</span>
+                        <span class="author-block">
+              <a href="https://www.ivllab.kaist.ac.kr/people/professor">Yong Man Ro </a><sup>*</sup>,</span>
                         <span class="author-block">
             </span>
                     </div>
@@ -170,10 +179,12 @@
                             </font>
                         </p>
                     </figcaption>
-                    
-
-                    <img class="columns is-centered has-text-centered" src="./static/images/config.png" alt="Teaser" width="85%"
-                         style="margin:0 auto">
+                    <br>
+                    <p>
+                        Based on the proposed MultiDialog dataset, we introduce an audio-visual spoken dialogue system that directly understands the audio-visual of the user's face video and generates appropriate responses with audio-visual face video. 
+                        It consists of three main parts: 1) Encoding audio-visual speech into discrete representations, namely audio-visual (AV) speech tokens. 2) Conducting multimodal spoken dialogue language modeling using the AV speech tokens as pseudo texts. 
+                        3) Projecting the output AV speech tokens into the audio and visual space for direct face-to-face dialogue. 
+                    </p>
                 </div>
                 <br/>
 
@@ -190,52 +201,365 @@
 
         <div class="columns is-centered">
             <div class="column is-full-width">
+                <br/>
+                <!--            Example-1-->
+                <h3 class="title is-4">• Example-1</h3>
+                <div class="content has-text-justified">
 
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Hi are you a football fan?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo1/user1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Yes, I like to football.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo1/user2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-1-->
 
                 <br/>
-
-
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<section class="section">
-    <div class="container is-max-desktop">
-
-        <!--    <div class="columns is-centered has-text-centered">-->
-        <!--        <h2 class="title is-2">Demonstrations</h2>-->
-        <!--      <br>-->
-        <!--    </div>-->
-
-        <div class="columns is-centered">
-            <div class="column is-full-width">
-                <h2 class="title is-3">Related Links</h2>
-
+                <!--            Example-2-->
+                <h3 class="title is-4">• Example-2</h3>
                 <div class="content has-text-justified">
-                    <p>
-                        You may refer to related work that serves as foundations for our framework and code repository,
-                        such as <a href="https://github.com/lm-sys/FastChat">Vicuna</a>,
-                        <a href="https://github.com/facebookresearch/ImageBind">ImageBind</a>,
-                        <a href="https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/text2img">Stable Diffusion</a>,
-                        <a href="https://github.com/haoheliu/AudioLDM">AudioLDM</a>,
-                        and <a href="https://huggingface.co/cerspense/zeroscope_v2_576w">Zeroscope</a>.
-                        We also partially draw inspirations from <a href="https://codi-gen.github.io/">CoDi</a>,
-                        <a href="https://vpgtrans.github.io/">VPGTrans</a>,
-                        <a href="https://github.com/DAMO-NLP-SG/Video-LLaMA">Video-LLaMA</a>,
-                        <a href="https://github.com/yxuansu/PandaGPT">PandaGPT</a>,
-                        <a href="https://github.com/kohjingyu/gill">GILL</a>,
-                        and <a href="https://github.com/Vision-CAIR/MiniGPT-4">MiniGPT-4</a>.
 
-                    </p>
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Are you a fan of drama films?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo2/user1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Yes friend, what about yourself?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo2/user2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!--          End  Example-2-->
+
+                <br/>
+                <!--            Example-3-->
+                <h3 class="title is-4">• Example-3</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Do you watch the NFL?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo3/user1-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I sure do, how about yourself?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo3/user2-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Me too. Did you know women can play in the NFL too?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo3/user1-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I did not know that. That is really cool.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo3/user2-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-3-->
+                <br/>
+                <!--            Example-4-->
+                <h3 class="title is-4">• Example-4</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Boy, I miss football season. I love ESPN's Monday night football offerings. What about you?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo4/user1-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I don't really watch it though sometimes I inadvertantly end up watching Thursday Night Football.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo4/user2-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Ah, yes... Did you know ABC is the only one of the 4 major broadcast networks without a prime-time NFL game?
+                                        </p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo4/user1-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>That is right. I find it interesting that football can burst click for 75 million dollars back in the end.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo4/user2-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-4-->
+                <br/>
+                <!--            Example-5-->
+                <h3 class="title is-4">• Example-5</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I was unaware that the top bowlers in the 60s as much as top football stars.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo5/user1-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Yeah most football players kept regular jobs when they weren't playing, so I guess it's not unrealistic for top bowlers to make more than them during the 60s.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo5/user2-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Yeah crazy! ESPN won an emmy for the creation of the superimposed yellow line that represents the first down marker.
+                                        </p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo5/user1-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I never heard of those ha! I can't imaging that change. It's been nice chatting with you.</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo5/user2-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-5-->
+                <br/>
+                <!--            Example-6-->
+                <h3 class="title is-4">• Example-6</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Are you a fan of drama films?</p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo6/user1-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I am. I love all genres.</p> 
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo6/user2-1.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Interesting. Have you ever seen HOUSE?
+                                        </p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo6/user1-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I have seen it. Great drama series. </p>
+                                        <p><video playsinline="" controls="">
+                                            <source type="video/mp4" src="./static/images/demo6/user2-2.mp4"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-6-->
             </div>
         </div>
 
     </div>
 </section>
+
 
 
 
