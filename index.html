@@ -1,0 +1,257 @@
+9<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Let's Go Real Talk: Spoken Dialogue Model for Face-to-Face Conversation">
+    <meta name="keywords" content="face-to-face conversation, multimodal conversation, spoken dialogue modles">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MultiDialog</title> 
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {   
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+    <link rel="icon" href="./static/images/logo.png">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <link rel="stylesheet" href="./static/css/index-gradio.css">
+    <link rel="stylesheet" href="./static/css/live_theme.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title"
+                        style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;"><img
+                            src="./static/images/logo.png" width="60" height="60" style="margin-right: 10px;">MultiDialog:</h1>
+                    <h1 class="title is-2 publication-title">Spoken Dialogue Model for Face-to-Face Conversation</h1>
+                    <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/sejinpark/sejinpark">Sejin Park</a>,</span>
+                        <span class="author-block">
+              <a href="https://chae-won-kim.github.io/">Chae Won Kim</a>,</span>
+                        <span class="author-block">
+            </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+                        <span class="author-block"><a href="https://www.ivllab.kaist.ac.kr">Integrated Vision Language Lab</a>, KAIST</span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block" style="font-size: 15px;">(<sup>*</sup>Correspondence)</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                <a href="https://openreview.net/pdf/aa4a856b1711819ba41e961ef57f76074c14ebe4.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/MultiDialog"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+
+                            <span class="link-block">
+                <a href="https://github.com/MultiDialog" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-2">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        In this paper, we introduce a novel Face-to-Face spoken dialogue model. 
+                        It processes audio-visual speech from user input and generates audio-visual speech as the response, 
+                        marking the initial step towards creating an avatar chatbot system without relying on intermediate text. 
+                      To this end, we newly introduce MultiDialog, the first large-scale multimodal (\ie, audio and visual) 
+                      spoken dialogue corpus containing 387 hours of approximately 10,000 dialogues, 
+                      recorded based on the open domain dialogue dataset, TopicalChat. 
+                      The MultiDialog contains parallel audio-visual recordings of conversation partners acting according to the given script with emotion annotations, 
+                      which we expect to open up research opportunities in multimodal synthesis. 
+                      Our Face-to-Face spoken dialogue model incorporates a textually pretrained large language model 
+                      and adapts it into the audio-visual spoken dialogue domain by incorporating speech-text joint pretraining. 
+                      Through extensive experiments, we validate the effectiveness of our model in facilitating a face-to-face conversation. 
+                      All the data will be open-sourced. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <br>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+            <h2 class="title is-2">Technical Description</h2>
+            <br>
+        </div>
+
+        <!-- Architecture -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h4 class="title is-3">• Architecture</h4>
+
+                <div class="content has-text-justified">
+                    <img class="columns is-centered has-text-centered" src="./static/images/framework.png" alt="Teaser" width="95%"
+                         style="margin:0 auto">
+                    <br>
+                    <figcaption>
+                        <p style="text-align: center;">
+                            <font color="061E61">
+                                <b>Figure 1:</b> Overview of the proposed framework for multimodal spoken dialogue language modeling. 
+                              With the AV speech tokens as the pseudo-texts, it can process audio-visual face video from the user input and generate corresponding response as audio-visual face video.
+                            </font>
+                        </p>
+                    </figcaption>
+                    
+
+                    <img class="columns is-centered has-text-centered" src="./static/images/config.png" alt="Teaser" width="85%"
+                         style="margin:0 auto">
+                </div>
+                <br/>
+
+            </div>
+        </div>
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+            <h2 class="title is-2">Demonstrations</h2>
+            <br>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+
+
+                <br/>
+
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <!--    <div class="columns is-centered has-text-centered">-->
+        <!--        <h2 class="title is-2">Demonstrations</h2>-->
+        <!--      <br>-->
+        <!--    </div>-->
+
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Related Links</h2>
+
+                <div class="content has-text-justified">
+                    <p>
+                        You may refer to related work that serves as foundations for our framework and code repository,
+                        such as <a href="https://github.com/lm-sys/FastChat">Vicuna</a>,
+                        <a href="https://github.com/facebookresearch/ImageBind">ImageBind</a>,
+                        <a href="https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/text2img">Stable Diffusion</a>,
+                        <a href="https://github.com/haoheliu/AudioLDM">AudioLDM</a>,
+                        and <a href="https://huggingface.co/cerspense/zeroscope_v2_576w">Zeroscope</a>.
+                        We also partially draw inspirations from <a href="https://codi-gen.github.io/">CoDi</a>,
+                        <a href="https://vpgtrans.github.io/">VPGTrans</a>,
+                        <a href="https://github.com/DAMO-NLP-SG/Video-LLaMA">Video-LLaMA</a>,
+                        <a href="https://github.com/yxuansu/PandaGPT">PandaGPT</a>,
+                        <a href="https://github.com/kohjingyu/gill">GILL</a>,
+                        and <a href="https://github.com/Vision-CAIR/MiniGPT-4">MiniGPT-4</a>.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p style="text-align: center;">
+                        The webpage is built based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
