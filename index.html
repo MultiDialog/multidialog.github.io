@@ -126,7 +126,6 @@
             <!-- Abstract. -->
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h4 class="title is-3">Abstract</h4>
                     <div class="content has-text-justified">
                         <p>
                             In this paper, we introduce a novel <b>Face-to-Face spoken dialogue model</b>. 
@@ -156,12 +155,10 @@
             <!-- Dataset -->
             <div class="columns is-centered">
                 <div class="column is-full-width">
-                    <div class="columns is-centered has-text-centered">
-                        <h4 class="title is-3">Technical Description</h4>
-                        <br>
-                    </div>
+                    <h5 class="title is-4">MultiDialog Dataset</h5>
+                        
                     <div class="content has-text-justified">
-                        <img class="columns is-centered has-text-centered" src="./static/images/dataset.png" alt="Teaser" width="65%"
+                        <img class="columns is-centered has-text-centered" src="./static/images/dataset.png" alt="Teaser" width="70%"
                             style="margin:0 auto">
                         <br>
                         <figcaption>
@@ -217,7 +214,7 @@
             <!-- Architecture -->
             <div class="columns is-centered">
                 <div class="column is-full-width">
-                    <h5 class="title is-4">• Audio-Visual Spoken Dialogue System</h5>
+                    <h5 class="title is-4">Audio-Visual Spoken Dialogue System</h5>
 
                     <div class="content has-text-justified">
                         <img class="columns is-centered has-text-centered" src="./static/images/framework.png" alt="Teaser" width="58%"
@@ -227,7 +224,7 @@
                             <p style="text-align: center;">
                                 <font color="061E61">
                                     <b>Figure 1:</b> Overview of the proposed framework for multimodal spoken dialogue language modeling. 
-                                With the AV speech tokens as the pseudo-texts, it can process audio-visual face video from the user input and generate corresponding response as audio-visual face video.
+                                With the AV speech tokens as the pseudo-texts, it can process audio-visual face video from the user input and generate corresponding responses as audio-visual face video.
                                 </font>
                             </p>
                         </figcaption>
@@ -236,18 +233,24 @@
                         <ul>
                         <li>
                             <b>Audio-Visual Speech Encoding.</b> 
-                                We gathered 12 fluent English speakers, with varying gender, age, and nationality. The participants, aged 20 to 25, 
-                                came from six different countries, with six female and six male actors. We derived dialogue scripts from the open-domain
-                                dialogue dataset, TopicalChat \cite{gopalakrishnan2023topical} which is a 
-                                rich knowledge-grounded dataset collected from real human-human conversations.
+                                We adopt a unified approach to model both audio and visual inputs into audio-visual speech tokens. Motivated by success with discrete speech tokens from self-supervised models, 
+                                we tokenize audio and visual streams into AV speech tokens. Employing AV-HuBERT, a multimodal speech model, we extract audio-visual speech features to capture linguistic 
+                                and phonetic information. These AV speech tokens are then used to train our Audio-Visual Spoken Dialogue LM.
                         </li>
                         <li>
                             <b>Audio-Visual Spoken Dialogue Language Modeling.</b>
-                                Data was recorded in a professional recording studio with a green screen and minimal background noise. During a recording session, 
-                                two conversation partners sat side-by-side and were recorded with a separate camera and a microphone.
-                                The participants were asked to act according to a given script conveying the desired emotion annotation for each utterance. 
-                                We specifically provided emotion instructions for visual cues based on the Facial Action Coding System \cite{ekman1978facial} 
-                                (i.e., happy: cheek raiser, lip corner puller) and for audio cues based on prosody (i.e., happy: high pitch, normal loudness). 
+                                <p>As shown in Fig.1</a>, our audio-visual spoken dialogue language model is trained with the AV speech tokens on our MultiDialog dataset. Previous work showed that initializing a speech language model with a textually pretrained language model (LLM) leads to better performance and faster convergence. Accordingly, we use a pretrained LLM, OPT-1.3B to initialize our model and combine the vocabulary of AV speech tokens with the original text vocabulary. This allows us to jointly model the probability of both AV speech tokens and text tokens $t$, where the loss can be represented as,</p>
+                                <div>
+                                  <p>
+                                    \[ \mathcal{L} = -\sum_{i=1}^{N} \log p(t_i \mid t_1, ... , t_{i-1}) \]
+                                  </p>
+                                  <p>
+                                    which is the negative log-likelihood of predicting the next token in the sequence of length $N$ tokens.
+                                  </p>
+                                </div>
+                                <p>Motivated by the joint speech-text training used in speech processing tasks such as speech translation, audio speech recognition, and text-to-speech synthesis, we newly introduce a joint speech-text pre-training scheme tailored for spoken dialogue language modeling. In our setting, each dialogue $D = [T_1^{ai}, T_1^{user}, T_2^{ai}, T_2^{user}, \ldots, T_k^{ai}, T_k^{user}]$ consists of $k$ rounds of turns $T$ between two speakers which we randomly designate as the AI and the User. The goal of this pre-training is to effectively transform the text-based LLM into the AV speech token-based LLM, enabling it to produce relevant AV speech responses from the AI side given a conversation context. It proceeds in the following two stages:</p>
+                                <p><strong>The first stage</strong> is instructing the LLM to interpret and generate AV speech tokens. We segment the dialogue into turns $T$ and prepare paired AV speech tokens and text tokens. We then concatenate the pair with their respective modality prefix tokens, $\textrm{<speech>}$ and $\textrm{<text>}$, to indicate the beginning of text and AV speech tokens. Adding the reversed order of concatenation, we construct both audio-visual speech recognition (AVSR) and text-to-speech generation (TTS) training objectives as shown in Fig.2.a and b. Only the embedding layer and the projection layer are trained in this first stage, which guides the LLM to understand and generate AV speech tokens while fully retaining the given LLM knowledge needed for dialogue generation.</p>
+                                <p><strong>The second stage</strong> is jointly learning the text and AV speech token-based dialogue. We select either one of the speakers as the AI which the model aims to predict and indicate the start of the response with additional speaker prefix tokens, $\textrm{<User>}$ and $\textrm{<AI>}$. The Speaker prefix token is followed by modality prefix tokens, $\textrm{<Speech>}$ and $\textrm{<Text>}$, to indicate whether the utterance is in AV speech or text as shown in Fig.2.c. During the pretraining, we evenly mix the use of AV speech tokens and text which allows the model to utilize both token knowledge to generate dialogue response. We pretrain the entire model at this stage and we later finetune on pure AV speech token-based dialogue as in Fig.2.d</p>
                         </li>
                         <li>
                             <b>Audio-Visual Generation</b>
