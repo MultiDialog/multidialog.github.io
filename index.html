@@ -82,7 +82,7 @@
                             <div class="publication-links">
                                 <!-- PDF Link. -->
                                 <span class="link-block">
-                                    <a href="https://openreview.net/pdf/aa4a856b1711819ba41e961ef57f76074c14ebe4.pdf"
+                                    <a 
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-file-pdf"></i>
@@ -237,25 +237,22 @@
                         <li>
                             <b>Audio-Visual Spoken Dialogue Language Modeling.</b>
                                 <p>We use a pretrained LLM, OPT-1.3B to initialize our model and combine the vocabulary of AV speech tokens with the original text vocabulary. This allows us to jointly 
-                                model the probability of both AV speech tokens and text tokens. We newly introduce a joint speech-text pre-training scheme tailored for spoken dialogue language modeling. 
-                                The goal of this pre-training is to effectively transform the text-based LLM into the AV speech token-based LLM, enabling it to produce relevant AV speech responses from 
-                                the AI side given a conversation context. It proceeds in the following two stages:</p>
+                                model the probability of both AV speech tokens and text tokens. We introduce a joint speech-text pre-training scheme to effectively transform the text-based LLM into 
+                                the AV speech token-based LLM, enabling it to produce relevant AV speech responses from the AI side given a conversation context. It proceeds in the following two stages:</p>
                                 
                                 <p><strong>The first stage</strong> is instructing the LLM to interpret and generate AV speech tokens. We segment the dialogue into turns and prepare paired AV speech tokens and text tokens. 
-                                We then concatenate the pair with their respective modality prefix tokens, to indicate the beginning of text and AV speech tokens. Adding the reversed order of concatenation, 
-                                we construct both audio-visual speech recognition (AVSR) and text-to-speech generation (TTS) training objectives. Only the embedding layer and the projection layer 
+                                We then concatenate the pair to construct both audio-visual speech recognition (AVSR) and text-to-speech generation (TTS) training objectives. Only the embedding layer and the projection layer 
                                 are trained, which guides the LLM to understand and generate AV speech tokens while fully retaining the given LLM knowledge needed for dialogue generation.</p>
                                 
                                 <p><strong>The second stage</strong> is jointly learning the text and AV speech token-based dialogue. We select either one of the speakers as the AI which the model aims 
-                                to predict and indicate the start of the response with additional speaker prefix tokens. The Speaker prefix token is followed by modality prefix tokens, 
-                                to indicate whether the utterance is in AV speech or text. During the pretraining, we evenly mix the use of AV speech tokens and text which 
+                                to predict and indicate the start of the response with additional speaker prefix tokens. During the pretraining, we evenly mix the use of AV speech tokens and text which 
                                 allows the model to utilize both token knowledge to generate dialogue response. We pretrain the entire model at this stage and we later finetune on pure AV speech 
                                 token-based dialogue.</p>
                         </li>
                         <li>
                             <b>Audio-Visual Generation</b>
                             <p>The AV speech tokens are used to generate a response in the form of a talking face video. The audio-visual generator includes a length predictor, a token-based speech decoder, 
-                                and a token-based face decoder. The token-based speech decoder and face decoder, adapted from existing speech generator and TFG, process AV speech tokens instead of raw audio. 
+                                and a token-based face decoder. The token-based speech decoder and face decoder, adapted from the existing speech generator and face generator, process AV speech tokens instead of raw audio. 
                                 Speaker identity information is incorporated through speaker embedding extraction, and the target identity's face and pose prior are utilized to enable generation with the desired identity.</p>
                         </li>
                         </ul>     
