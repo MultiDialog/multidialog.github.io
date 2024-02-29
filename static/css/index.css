@@ -2,12 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-.footer {
-  /* position: fixed; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 
 .footer .icon-link {
     font-size: 25px;
@@ -77,7 +71,12 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+  /* color: hsl(204, 86%, 53%) !important; */
+  /* 黑色 */
+  color: hsl(0, 0%, 0%) !important;
+  /* 黑体 */
+  font-family: 'Heiti SC', sans-serif;
+  font-weight: bold;
 }
 
 .publication-authors a:hover {
