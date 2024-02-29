@@ -240,11 +240,11 @@
                                 model the probability of both AV speech tokens and text tokens. We introduce a joint speech-text pre-training scheme to effectively transform the text-based LLM into 
                                 the AV speech token-based LLM, enabling it to produce relevant AV speech responses from the AI side given a conversation context. It proceeds in the following two stages:</p>
                                 
-                                <p><strong>The first stage</strong> is instructing the LLM to interpret and generate AV speech tokens. We segment the dialogue into turns and prepare paired AV speech tokens and text tokens. 
+                                <p>The first stage is instructing the LLM to interpret and generate AV speech tokens. We segment the dialogue into turns and prepare paired AV speech tokens and text tokens. 
                                 We then concatenate the pair to construct both audio-visual speech recognition (AVSR) and text-to-speech generation (TTS) training objectives. Only the embedding layer and the projection layer 
-                                are trained, which guides the LLM to understand and generate AV speech tokens while fully retaining the given LLM knowledge needed for dialogue generation.</p>
+                                are trained, which guides the LLM to understand and generate AV speech tokens while retaining the given LLM knowledge needed for dialogue generation.</p>
                                 
-                                <p><strong>The second stage</strong> is jointly learning the text and AV speech token-based dialogue. We select either one of the speakers as the AI which the model aims 
+                                <p>The second stage is jointly learning the text and AV speech token-based dialogue. We select either one of the speakers as the AI which the model aims 
                                 to predict and indicate the start of the response with additional speaker prefix tokens. During the pretraining, we evenly mix the use of AV speech tokens and text which 
                                 allows the model to utilize both token knowledge to generate dialogue response. We pretrain the entire model at this stage and we later finetune on pure AV speech 
                                 token-based dialogue.</p>
