@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -53,9 +53,9 @@
                         <h1 class="title is-2 publication-title">for Face-to-Face Conversation</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                            <a href="https://sites.google.com/view/sejinpark/sejinpark">Se Jin Park</a>,</span>
+                            <a href="https://sites.google.com/view/sejinpark/sejinpark">Se Jin Park</a><sup>*</sup>,</span>
                                         <span class="author-block">
-                            <a href="https://chae-won-kim.github.io/">Chae Won Kim</a>,</span>
+                            <a href="https://chae-won-kim.github.io/">Chae Won Kim</a><sup>*</sup>,</span>
                                         <span class="author-block">
                             <a>Hyeongseop Rha</a>,</span>
                                         <span class="author-block">
@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block" style="font-size: 15px;">(<sup>*</sup>Correspondence)</span>
+                            <span class="author-block" style="font-size: 15px;">(<sup>*</sup>Equal Contributor)</span>
                         </div>
 
                         <div class="column has-text-centered">
@@ -93,7 +93,7 @@
 
                                 <!-- Code Link. -->
                                 <span class="link-block">
-                                    <a 
+                                    <a href="https://github.com/MultiDialog/MultiDialog"
                                     class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fab fa-github"></i>
@@ -102,17 +102,26 @@
                                     </a>
                                 </span>
 
-
+                                <!-- Dataset Link. -->
                                 <span class="link-block">
-                                    <a href="https://kaistackr-my.sharepoint.com/:f:/g/personal/jinny960812_kaist_ac_kr/EoRzehH2WG1IudFq2C1N-nwBR0SEw8Dg_hbmYuc7OMD-rg"
+                                    <a href="https://huggingface.co/datasets/IVLLab/MultiDialog"
                                     class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fa fa-database"></i>
                                     </span>
-                                    <span>Dataset</span>
+                                    <span>Audio Dataset</span>
                                     </a>
                                 </span>
-                                <p>*We initially released a subset of our test set.<br>For full access, please contact <a href="mailto:jinny960812@kaist.ac.kr">jinny960812@kaist.ac.kr</a></p>
+
+                                <span class="link-block">
+                                    <a href="https://drive.google.com/drive/u/1/folders/1RPMwVHU34yX0R_HbxAWmxF2EHy961HA3"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fa fa-database"></i>
+                                    </span>
+                                    <span>Video Dataset</span>
+                                    </a>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -133,14 +142,14 @@
                             It processes audio-visual speech from user input and generates audio-visual speech as the response, 
                             marking the initial step towards creating an avatar chatbot system without relying on intermediate text. 
                             To this end, we newly introduce <b>MultiDialog</b>, the first large-scale multimodal (i.e., audio and visual) 
-                            spoken dialogue corpus containing 387 hours of approximately 10,000 dialogues, 
+                            spoken dialogue corpus containing 340 hours of approximately 9,000 dialogues, 
                             recorded based on the open domain dialogue dataset, TopicalChat. 
                             The MultiDialog contains parallel audio-visual recordings of conversation partners acting according to the given script with emotion annotations, 
                             which we expect to open up research opportunities in multimodal synthesis. 
                             Our Face-to-Face spoken dialogue model incorporates a textually pretrained large language model 
                             and adapts it into the audio-visual spoken dialogue domain by incorporating speech-text joint pretraining. 
                             Through extensive experiments, we validate the effectiveness of our model in facilitating a face-to-face conversation. 
-                            All the data will be open-sourced. 
+                            Data is available at <a href="https://huggingface.co/datasets/IVLLab/MultiDialog">https://huggingface.co/datasets/IVLLab/MultiDialog</a>. 
                         </p>
                     </div>
                 </div>
@@ -159,7 +168,7 @@
                     <h5 class="title is-4">MultiDialog Dataset</h5>
                         
                     <div class="content has-text-justified">
-                        <img class="columns is-centered has-text-centered" src="./static/images/dataset.png" alt="Teaser" width="70%"
+                        <img class="columns is-centered has-text-centered" src="./static/images/dataset.png" alt="Teaser" width="80%"
                             style="margin:0 auto">
                         <br>
                         <figcaption>
@@ -170,7 +179,7 @@
                             </p>
                         </figcaption>
                         <br>
-                        <img class="columns is-centered has-text-centered" src="./static/images/multidialog.png" alt="Teaser" width="30%"
+                        <img class="columns is-centered has-text-centered" src="./static/images/multidialog.png" alt="Teaser" width="80%"
                             style="margin:0 auto">
                         <br>
                         <figcaption>
@@ -200,7 +209,7 @@
                             <b>Post-Processing.</b>
                                 We had an annotator go through the audio-visual recordings to manually adjust the misalignments by sliding the start time. 
                                 We segmented the recordings into conversations and turns based on the recorded timesteps of each turn. The MultiDialog dataset consists of 
-                                approximately 400 hours of audio-visual videos of 10,000 dialogues between 6 pairs of conversation partners. The final statistics of our 
+                                approximately 340 hours of audio-visual videos of 9,000 dialogues between 6 pairs of conversation partners. The final statistics of our 
                                 dataset are shown in Table 2. 
                         </li>
                         </ul>     
